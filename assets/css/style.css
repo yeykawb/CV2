@@ -63,13 +63,14 @@ body.light-mode .navbar {
 
 .nav-logo a {
     font-size: 1.5rem;
-    font-weight: bold;
-    color: #667eea;
+    font-weight: 500;
+    color: #ffffff;
     text-decoration: none;
+    letter-spacing: 0.5px;
 }
 
 body.light-mode .nav-logo a {
-    color: #0066cc;
+    color: #1a1a1a;
 }
 
 .nav-menu {
@@ -140,6 +141,19 @@ body.light-mode .hero {
     font-size: 3.5rem;
     margin-bottom: 1rem;
     font-weight: 700;
+    color: white;
+}
+
+body.light-mode .hero-content h1 {
+    color: white;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #ff8c42 0%, #667eea 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
 .hero .subtitle {
