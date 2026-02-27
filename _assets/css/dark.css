@@ -1,32 +1,137 @@
+:root {
+    --primary-color: #667eea;
+    --secondary-color: #b0b0b0;
+    --text-color: #e0e0e0;
+    --bg-color: #1a1a1a;
+    --border-color: #333;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
 body {
-  background-color: #1e1e1e;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
 }
 
-a {
-  color: #90caf9;
+.navbar {
+    background-color: #252525;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-a:hover {
-  color: #bbdefb;
+.nav-logo a {
+    color: #667eea;
 }
 
-header, footer {
-  background-color: #1e1e1e;
-  color: #9f988c;
+.nav-menu a {
+    color: #e0e0e0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #ffffff;
+.nav-menu a:hover {
+    color: #667eea;
 }
 
-strong, b {
-  color: #ffffff;
+.theme-toggle {
+    color: #e0e0e0;
 }
 
-section p, section li {
-  color: #9f988c;
+.theme-toggle:hover {
+    color: #667eea;
 }
 
-section img {
-  padding: 5px;
+.hero {
+    background: linear-gradient(135deg, #3b4452 0%, #2a2a2a 100%);
+}
+
+.about,
+.contact {
+    background-color: #1a1a1a;
+}
+
+.about h2,
+.projects h2,
+.contact h2 {
+    color: #e0e0e0;
+}
+
+.projects {
+    background-color: #252525;
+}
+
+.skill-tag {
+    background-color: #333;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+.project-category h3 {
+    color: #667eea;
+}
+
+.project-card {
+    background-color: #2a2a2a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.project-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.project-content h4 {
+    color: #e0e0e0;
+}
+
+.project-content p {
+    color: #b0b0b0;
+}
+
+.tag {
+    background-color: #333;
+    color: #667eea;
+}
+
+.project-links .link {
+    color: #667eea;
+}
+
+.contact-intro {
+    color: #b0b0b0;
+}
+
+.contact-item strong {
+    color: #667eea;
+}
+
+.contact-item a {
+    color: #667eea;
+}
+
+.form-group input,
+.form-group textarea {
+    background-color: #2a2a2a;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.footer {
+    background-color: #0f0f0f;
+    color: #e0e0e0;
+}
+
+.footer-links a:hover {
+    color: #667eea;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #667eea;
+        --secondary-color: #b0b0b0;
+        --text-color: #e0e0e0;
+        --bg-color: #1a1a1a;
+        --border-color: #333;
+    }
 }
