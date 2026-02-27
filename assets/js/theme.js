@@ -1,29 +1,29 @@
 // Theme Toggle
 const themeToggleButton = document.getElementById('theme-toggle-button');
-const darkModeStylesheet = document.getElementById('dark-mode-stylesheet');
-const htmlElement = document.documentElement;
+const body = document.body;
 
 function setTheme(theme) {
-    if (theme === 'dark') {
-        darkModeStylesheet.disabled = false;
-        htmlElement.setAttribute('data-theme', 'dark');
-        themeToggleButton.innerHTML = '<i class="fas fa-sun"></i>';
-        localStorage.setItem('theme', 'dark');
-    } else {
-        darkModeStylesheet.disabled = true;
-        htmlElement.setAttribute('data-theme', 'light');
+    if (theme === 'light') {
+        body.classList.add('light-mode');
         themeToggleButton.innerHTML = '<i class="fas fa-moon"></i>';
+        themeToggleButton.setAttribute('title', 'Switch to dark mode');
         localStorage.setItem('theme', 'light');
+    } else {
+        body.classList.remove('light-mode');
+        themeToggleButton.innerHTML = '<i class="fas fa-sun"></i>';
+        themeToggleButton.setAttribute('title', 'Switch to light mode');
+        localStorage.setItem('theme', 'dark');
     }
 }
 
 themeToggleButton.addEventListener('click', () => {
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
 });
 
 // Initialize theme on page load
 window.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    const savedTheme = localStorage.getItem('theme') || 'dark';
     setTheme(savedTheme);
 });
