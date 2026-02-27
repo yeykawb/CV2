@@ -33,9 +33,8 @@
         <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
         {% endif %}
 				
-        <button id="theme-toggle-button" style="background-color: #f0f0f0; border: none; border-radius: 8px; padding: 10px 15px; font-size: 1.1em; cursor: pointer; margin-top: 8px; color: #333; display: flex; align-items: center; gap: 0.5em;">
-          <span id="theme-toggle-icon" class="fa fa-moon-o"></span>
-          <span id="theme-toggle-label">Dark Mode</span>
+        <button id="theme-toggle-button" style="background-color: #f0f0f0 !important; border: 1px solid #999 !important; border-radius: 8px !important; padding: 10px 15px !important; font-size: 1.1em !important; cursor: pointer !important; margin-top: 8px !important; color: #333 !important; display: block !important; width: auto !important; position: relative !important; z-index: 1000 !important;">
+          <span id="theme-toggle-label">🌙 Dark Mode</span>
         </button>
         
 				{% if site.show_downloads %}
@@ -61,23 +60,20 @@
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
     <script>
       const themeToggleButton = document.getElementById('theme-toggle-button');
-      const themeToggleIcon = document.getElementById('theme-toggle-icon');
       const themeToggleLabel = document.getElementById('theme-toggle-label');
       const darkModeStylesheet = document.getElementById('dark-mode-stylesheet');
 
       function setTheme(theme) {
         if (theme === 'dark') {
           darkModeStylesheet.disabled = false;
-          themeToggleIcon.className = 'fa fa-moon-o';
-          themeToggleLabel.textContent = 'Dark mode';
+          themeToggleLabel.textContent = '☀️ Light Mode';
           themeToggleButton.style.backgroundColor = '#333';
           themeToggleButton.style.color = '#f0f0f0';
           themeToggleButton.setAttribute('aria-label', 'Switch to light mode');
           localStorage.setItem('theme', 'dark');
         } else {
           darkModeStylesheet.disabled = true;
-          themeToggleIcon.className = 'fa fa-sun-o';
-          themeToggleLabel.textContent = 'Light mode';
+          themeToggleLabel.textContent = '🌙 Dark Mode';
           themeToggleButton.style.backgroundColor = '#f0f0f0';
           themeToggleButton.style.color = '#333';
           themeToggleButton.setAttribute('aria-label', 'Switch to dark mode');
