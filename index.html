@@ -6,6 +6,7 @@
     <title>Jakob Agelin - Data Engineer</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 </head>
 <body class="dark-mode">
 
@@ -38,6 +39,7 @@
 
     <!-- Hero -->
     <section id="hero" class="hero">
+        <canvas id="hero-canvas"></canvas>
         <div class="hero-content">
             <h1>Hello, I'm <span class="intro-name">Jakob</span></h1>
             <h2><span id="typed-text"></span><span class="typed-cursor">|</span></h2>
@@ -72,7 +74,7 @@
                             <span class="skill-pill">Python</span>
                             <span class="skill-pill">Azure</span>
                             <span class="skill-pill">SQL</span>
-                            <span class="skill-pill">dbt</span>
+                            <span class="skill-pill">dbt Cloud</span>
                             <span class="skill-pill">PySpark</span>
                             <span class="skill-pill">Azure Data Factory</span>
                             <span class="skill-pill">Databricks</span>
@@ -82,6 +84,7 @@
                             <span class="skill-pill">Data Modelling</span>
                             <span class="skill-pill">ETL / ELT</span>
                             <span class="skill-pill">Medallion Architecture</span>
+                            <span class="skill-pill">CI/CD</span>
                         </div>
                     <div class="radar-container">
                         <h4 class="skills-title">On the Radar <span class="skills-title-note">(what I'm following and want to dig into)</span></h4>
@@ -98,6 +101,9 @@
                             <span class="radar-pill">GCP / BigQuery</span>
                             <span class="radar-pill">Polars</span>
                             <span class="radar-pill">dlt</span>
+                            <span class="radar-pill">Rust</span>
+                            <span class="radar-pill">DuckDB/MotherDuck</span>
+                            <span class="radar-pill">Context Engineering</span>
                         </div>
                     </div>
                     </div>
@@ -134,6 +140,7 @@
                                 <span class="project-tag">Data modelling</span>
                                 <span class="project-tag">Git</span>
                             </div>
+                            <button class="arch-btn" data-project="ambea">Architecture →</button>
                         </div>
                     </div>
 
@@ -151,6 +158,7 @@
                                 <span class="project-tag">Git</span>
                                 <span class="project-tag">On-prem</span>
                             </div>
+                            <button class="arch-btn" data-project="bostadsformedlingen">Architecture →</button>
                         </div>
                     </div>
 
@@ -187,7 +195,7 @@
                     <div class="project-card">
                         <div class="project-image-placeholder">🏗️</div>
                         <div class="project-content">
-                            <h3>Data Platform owner</h3>
+                            <h3>Data Platform Owner</h3>
                             <p>As a one-person data team at a healthcare startup, built and owned the entire data platform from scratch. Covered Azure services, SQL Server, ETL in Azure Data Factory, T-SQL and Tabular Editor transformations, and CI/CD pipelines (ADF, SQL, Analysis Services, Power BI) in YAML — alongside stakeholder workshops and documentation.</p>
                             <div class="project-tags">
                                 <span class="project-tag">Azure</span>
@@ -197,6 +205,7 @@
                                 <span class="project-tag">Analysis Services</span>
                                 <span class="project-tag">CI/CD</span>
                             </div>
+                            <button class="arch-btn" data-project="visiba">Architecture →</button>
                         </div>
                     </div>
 
@@ -498,7 +507,22 @@
         <i class="fas fa-sun"></i>
     </button>
 
+    <!-- Architecture Modal -->
+    <div id="arch-modal" class="arch-modal" role="dialog" aria-modal="true" aria-labelledby="arch-modal-title">
+        <div class="arch-modal-dialog">
+            <div class="arch-modal-header">
+                <h3 id="arch-modal-title"></h3>
+                <button class="arch-modal-close" aria-label="Close diagram">&times;</button>
+            </div>
+            <div class="arch-modal-body">
+                <div id="arch-diagram"></div>
+            </div>
+        </div>
+    </div>
+
     <script src="assets/js/theme.js"></script>
+    <script src="assets/js/arch-renderer.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/hero3d.js"></script>
 </body>
 </html>

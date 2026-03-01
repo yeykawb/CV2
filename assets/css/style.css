@@ -3,6 +3,12 @@
    Inspired by zanepearton.github.io
    ===================================================== */
 
+@font-face {
+    font-family: 'Virgil';
+    src: url('https://excalidraw.com/virgil.woff2') format('woff2');
+    font-display: swap;
+}
+
 /* Custom Properties */
 :root {
     --apple-white: #ffffff;
@@ -191,6 +197,15 @@ nav a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) skewY(-10deg);
+    z-index: 0;
+}
+
+#hero-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: 1;
 }
 
@@ -1096,6 +1111,7 @@ footer {
 
 .dark-mode .hero::after {
     background: linear-gradient(135deg, #1c1c1c 0%, #121212 100%);
+    z-index: 0;
 }
 
 .dark-mode .hero-content h1 {
@@ -1617,6 +1633,127 @@ nav ul li a.active {
 
 @media (max-width: 768px) {
     #dot-nav { display: none; }
+}
+
+/* =====================================================
+   ARCHITECTURE MODAL
+   ===================================================== */
+
+.arch-btn {
+    display: inline-block;
+    margin-top: 14px;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 13px;
+    color: var(--apple-orange);
+    cursor: pointer;
+    letter-spacing: 0.01em;
+    transition: opacity 0.2s ease;
+}
+
+.arch-btn:hover {
+    opacity: 0.7;
+}
+
+.arch-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+.arch-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.arch-modal-dialog {
+    background: var(--apple-white);
+    border-radius: var(--radius-card);
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 1040px;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: translateY(16px);
+    transition: transform 0.25s ease;
+}
+
+.arch-modal.active .arch-modal-dialog {
+    transform: translateY(0);
+}
+
+.arch-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid var(--apple-mid-gray);
+}
+
+.arch-modal-header h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--apple-text);
+    margin: 0;
+}
+
+.arch-modal-close {
+    background: none;
+    border: none;
+    font-size: 22px;
+    line-height: 1;
+    color: var(--apple-dark-gray);
+    cursor: pointer;
+    padding: 0 4px;
+    transition: color 0.2s ease;
+}
+
+.arch-modal-close:hover {
+    color: var(--apple-text);
+}
+
+.arch-modal-body {
+    padding: 24px;
+    overflow-x: auto;
+}
+
+#arch-diagram svg {
+    display: block;
+    margin: 0 auto;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 160px;
+}
+
+.dark-mode .arch-modal-dialog {
+    background: #1e1e1e;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+}
+
+.dark-mode .arch-modal-header {
+    border-bottom-color: #333;
+}
+
+.dark-mode .arch-modal-header h3 {
+    color: #f0f0f0;
+}
+
+.dark-mode .arch-modal-close {
+    color: #888;
+}
+
+.dark-mode .arch-modal-close:hover {
+    color: #f0f0f0;
 }
 
 /* =====================================================

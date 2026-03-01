@@ -310,6 +310,10 @@ function initHeroParallax() {
 }
 
 // =====================================================
+//  ARCHITECTURE MODAL (logic lives in arch-renderer.js)
+// =====================================================
+
+// =====================================================
 //  INIT
 // =====================================================
 document.addEventListener('DOMContentLoaded', function () {
@@ -320,4 +324,22 @@ document.addEventListener('DOMContentLoaded', function () {
     initClipboard();
     initDotNav();
     initHeroParallax();
+
+    // Architecture modal
+    document.querySelectorAll('.arch-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            openArchModal(btn.dataset.project);
+        });
+    });
+
+    var archModal = document.getElementById('arch-modal');
+    archModal.addEventListener('click', function (e) {
+        if (e.target === this) closeArchModal();
+    });
+
+    document.querySelector('.arch-modal-close').addEventListener('click', closeArchModal);
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeArchModal();
+    });
 });
